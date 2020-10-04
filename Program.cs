@@ -4,20 +4,24 @@ namespace EmployeeWageTillUC7
 {
     class Program
     {
-        public static int EmployeeAttendance()
+        /// <summary>
+        /// Employees the daily wage.
+        /// </summary>
+        /// <returns></returns>
+        public static float EmployeeDailyWage()
         {
-            // Assigning a Random variable of 2 value range to check if the employee is present or absent
+            int wagePerHour = 20;
+            int fullDayHour = 8;
             Random random = new Random();
-            int flag = random.Next(0, 2);
-            if (flag == 1)
+            // A random object variable used to assign the time contribution of an employee
+            int fullTime = random.Next(0, 2);
+            if (fullTime == 1)
             {
-                Console.WriteLine("The Employee is Present");
-                return flag;
+                return wagePerHour * fullDayHour;
             }
             else
             {
-                Console.WriteLine("The Employee is Absent");
-                return flag;
+                return 0;
             }
         }
         static void Main(string[] args)
@@ -27,7 +31,7 @@ namespace EmployeeWageTillUC7
             Console.WriteLine("Welcome to Employee Wage Computation Program");
             Console.WriteLine("=============================================");
 
-            EmployeeAttendance();
+            EmployeeDailyWage();
         }
     }
 }
