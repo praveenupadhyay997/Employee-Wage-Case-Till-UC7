@@ -5,6 +5,32 @@ namespace EmployeeWageTillUC7
     class Program
     {
         /// <summary>
+        /// Alls the employee daily wage.
+        /// </summary>
+        /// <returns></returns>
+        public static float AllEmployeeDailyWage()
+        {
+            int wagePerHour = 20;
+            int fullDayHour = 8;
+            int partDayHour = 4;
+            float dailyWage = 0;
+            Random random = new Random();
+            int partTime = random.Next(0, 2);
+
+            //Solving Using Switch Case
+            int choice = random.Next(0, 2);
+            switch (choice)
+            {
+                case 0:
+                    dailyWage = wagePerHour * partDayHour;
+                    break;
+                case 1:
+                    dailyWage = wagePerHour * fullDayHour;
+                    break;
+            }
+            return dailyWage;
+        }
+        /// <summary>
         /// Parts the time employee daily wage.
         /// </summary>
         /// <returns></returns>
@@ -84,6 +110,8 @@ namespace EmployeeWageTillUC7
             Console.WriteLine(EmployeeDailyWage());
             // Calling the static function to Compute the daily wage for a Part time employee
             Console.WriteLine(PartTimeEmployeeDailyWage());
+            // Calling the static function to Compute the daily wage for all employee using switch case
+            Console.WriteLine(AllEmployeeDailyWage());
         }
     }
 }
