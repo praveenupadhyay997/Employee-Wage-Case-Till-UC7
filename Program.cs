@@ -5,6 +5,28 @@ namespace EmployeeWageTillUC7
     class Program
     {
         /// <summary>
+        /// Monthlies the wage.
+        /// </summary>
+        /// <returns></returns>
+        public static float MonthlyWage()
+        {
+            int wagePerHour = 20;
+            int fullDayHour = 8;
+            int partDayHour = 4;
+            //Constant for number of months in a day
+            int dayPerMonth = 20;
+            Random random = new Random();
+            int Time = random.Next(0, 2);
+            if (Time == 0)
+            {
+                return wagePerHour * partDayHour * dayPerMonth;
+            }
+            else
+            {
+                return wagePerHour * fullDayHour * dayPerMonth;
+            }
+        }
+        /// <summary>
         /// Alls the employee daily wage.
         /// </summary>
         /// <returns></returns>
@@ -112,6 +134,8 @@ namespace EmployeeWageTillUC7
             Console.WriteLine(PartTimeEmployeeDailyWage());
             // Calling the static function to Compute the daily wage for all employee using switch case
             Console.WriteLine(AllEmployeeDailyWage());
+            // Calling the static function to Compute the monthly wage for all employee
+            Console.WriteLine(MonthlyWage());
         }
     }
 }
